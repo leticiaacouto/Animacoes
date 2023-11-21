@@ -1,0 +1,56 @@
+@charset "utf8";
+
+body{
+    animation: gradiente 0.5s infinite alternate;
+    background: linear-gradient(45deg, red, pink, yellow, orange) no-repeat;
+    /* background-image: url(https://cdn.pixabay.com/photo/2021/01/08/13/38/road-5899921_1280.png) ; */
+    background-size: 300%, 300%;
+    height: 100vh;
+    background-position: top;
+    overflow: hidden;
+}
+
+img{
+    width: 180px;
+    position: absolute;
+    bottom: 5px;
+   /*  animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function:ease-in-out; */
+    /* começa rápido e vai e diminui a velocidade */
+   /*  animation-delay: 2s; */
+    /* demora para "andar/ iniciar" */
+    /* animation-iteration-count: 3.5; */
+    /* animation-direction: alternate-reverse; */
+    /* vai para trás */
+    /* animation-fill-mode: both;
+    animation-play-state: running; */
+
+    animation: move 5s ease;
+} 
+
+    img :hover{
+        animation-play-state: paused;
+    }
+
+@keyframes move {
+    from{
+        transform: translateX(0,0);
+    }
+
+    to{
+        transform: translate(calc(100vw - 180px), 50px);
+    }
+    
+}
+
+@keyframes gradiente {
+    from{
+    background-position: 0 50%;
+    }
+
+    to{
+    background-position: 100% 50%;
+    }
+    
+}
